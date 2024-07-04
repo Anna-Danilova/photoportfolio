@@ -1,0 +1,9 @@
+.title {
+  margin: 0;
+  font-family: $title-font;
+  color: $title-color;
+
+  &--small {
+    font-size: 20px;
+  }
+}

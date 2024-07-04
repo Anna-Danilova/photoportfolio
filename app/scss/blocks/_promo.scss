@@ -1,0 +1,33 @@
+.promo {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 25%;
+    gap: 30px;
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    cursor: default;
+  }
+
+  &__contact {
+    & + .promo__contact {
+      margin-top: 15px;
+    }
+  }
+
+  &__contact-link {
+    font-family: $main-font;
+    color: $main-color;
+    transition: 0.5s color;
+  }
+}
+
+@media (any-hover: hover) {
+  .promo {
+    &__contact-link:hover {
+      color: $decor-color;
+    }
+  }
+}
