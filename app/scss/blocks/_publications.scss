@@ -1,0 +1,82 @@
+.publications {
+  &__title {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  &__list {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 280px);
+    grid-template-rows: repeat(4, 160px);
+    grid-template-areas:
+      'line1 line1 poster1 poster2'
+      'line2 line2 poster1 poster2'
+      'poster3 poster4 poster5 poster6'
+      'poster3 poster4 poster5 poster6'
+      'poster7 poster8 line3 line3'
+      'poster7 poster8 line4 line4';
+    grid-auto-rows: 160px;
+  }
+
+  &__item {
+    background-color: grey;
+    &--line1 {
+      grid-area: line1;
+    }
+
+    &--line2 {
+      grid-area: line2;
+    }
+
+    &--poster1 {
+      grid-area: poster1;
+    }
+
+    &--poster2 {
+      grid-area: poster2;
+    }
+
+    &--poster2 {
+      grid-area: poster2;
+    }
+
+    &--poster3 {
+      grid-area: poster3;
+    }
+
+    &--poster4 {
+      grid-area: poster4;
+    }
+
+    &--poster5 {
+      grid-area: poster5;
+    }
+
+    &--poster6 {
+      grid-area: poster6;
+    }
+
+    &--poster7 {
+      grid-area: poster7;
+    }
+
+    &--poster8 {
+      grid-area: poster8;
+    }
+
+    &--line3 {
+      grid-area: line3;
+    }
+
+    &--line4 {
+      grid-area: line4;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+}
