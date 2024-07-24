@@ -1,0 +1,8 @@
+.appearing-section {
+  transition: transform 1s, opacity 1s;
+
+  &--hide {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}

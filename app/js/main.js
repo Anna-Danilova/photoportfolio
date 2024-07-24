@@ -18,3 +18,24 @@ const observer = new IntersectionObserver(entries => {
   });
 });
 observer.observe(document.body);
+
+//Плавное появление секций
+
+const appearingSections = document.querySelectorAll('.appearing-section');
+const appearanceObserver = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.remove('appearing-section--hide');
+      observer.unobserve(entry.target);
+    });
+  },
+  {
+    root: null,
+    threshold: 0.2,
+  }
+);
+appearingSections.forEach(function (section) {
+  section.classList.add('appearing-section--hide');
+  appearanceObserver.observe(section);
+});
