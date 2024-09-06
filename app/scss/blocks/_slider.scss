@@ -1,0 +1,9 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  &__list {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+}
