@@ -4,6 +4,65 @@
 
   &__list {
     display: flex;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
     transition: transform 0.5s ease;
+  }
+
+  &__title {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    svg g {
+      transition: 0.3s;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  &__dot {
+    width: 15px;
+    height: 15px;
+    border: 3px solid $main-color;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    &--active {
+      border-color: $decor-color;
+    }
+  }
+}
+
+@media (any-hover: hover) {
+  .slider {
+    &__dot:hover {
+      border-color: $decor-color;
+    }
+
+    &__button:hover {
+      svg g {
+        fill: $main-color;
+      }
+    }
   }
 }

@@ -45,9 +45,31 @@ const slides = document.querySelector('.slider__list');
 const slidesSum = slides.children.length;
 const nextSlideBtn = document.querySelector('.slider__button--next');
 const previousSlideBtn = document.querySelector('.slider__button--prev');
+const dotContainer = document.querySelector('.slider__dots');
+
 let currentSlide = 0;
 
-// console.log(slidesSum);
+function createDots() {
+  [...slides.children].forEach(function (_, index) {
+    dotContainer.insertAdjacentHTML(
+      'beforeend',
+      `<button class="slider__dot" data-slide="${index}"></button>`
+    );
+  });
+}
+
+createDots();
+
+function activateCurrentDot(slide) {
+  document
+    .querySelectorAll('.slider__dot')
+    .forEach(dot => dot.classList.remove('slider__dot--active'));
+  document
+    .querySelector(`.slider__dot[data-slide='${slide}']`)
+    .classList.add('slider__dot--active');
+}
+
+activateCurrentDot(0);
 
 function moveToSlide(slide) {
   slides.style.transform = `translateX(${-slide * 100}%)`;
@@ -62,6 +84,7 @@ nextSlideBtn.addEventListener('click', function () {
     currentSlide++;
   }
   moveToSlide(currentSlide);
+  activateCurrentDot(currentSlide);
 });
 
 previousSlideBtn.addEventListener('click', function () {
@@ -71,4 +94,14 @@ previousSlideBtn.addEventListener('click', function () {
     currentSlide--;
   }
   moveToSlide(currentSlide);
+  activateCurrentDot(currentSlide);
+});
+
+dotContainer.addEventListener('click', function (e) {
+  if (e.target.classList.contains('slider__dot')) {
+    //console.log('Dot clicked');
+    const slide = e.target.dataset.slide;
+    moveToSlide(slide);
+    activateCurrentDot(slide);
+  }
 });
