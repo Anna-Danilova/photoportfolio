@@ -45,24 +45,100 @@
           <h2 class="visually-hidden">Портфолио</h2>
           <div class="container">
             <div class="portfolio__wrapper slider">
-              <ul class="slider__list">
-                <li class="slider__item">
-                  <a class="slider__link">
-                    <img class="slider__img" src="images/series-1.jpg" alt="Девушка на пляже" />
-                    <h3 class="title slider__title">Серия 1</h3>
-                  </a>
-                </li>
-                <li class="slider__item">
-                  <a class="slider__link">
-                    <img
-                      class="slider__img"
-                      src="images/series-2.jpg"
-                      alt="Парень, готовящийся к выступлению"
-                    />
-                    <h3 class="title slider__title">Серия 2</h3>
-                  </a>
-                </li>
-              </ul>
+              <div class="slider__wrapper">
+                <ul class="slider__list">
+                  <li class="slider__item">
+                    <a class="slider__link">
+                      <picture class="slider__img">
+                        <source
+                          srcset="
+                            images/series-1.avif    1x,
+                            images/series-1_2x.avif 2x,
+                            images/series-1_3x.avif 3x
+                          "
+                          type="image/avif"
+                        />
+                        <source
+                          srcset="
+                            images/series-1.webp    1x,
+                            images/series-1_2x.webp 2x,
+                            images/series-1_3x.webp 3x
+                          "
+                          type="image/webp"
+                        />
+                        <img
+                          src="images/series-1.jpg"
+                          srcset="images/series-1_2x.jpg 2x, images/series-1_3x.jpg 3x"
+                          alt="Девушка на пляже"
+                          width="800"
+                          height="533"
+                        />
+                      </picture>
+                      <h3 class="title slider__title">Серия 1</h3>
+                    </a>
+                  </li>
+                  <li class="slider__item">
+                    <a class="slider__link">
+                      <picture class="slider__img">
+                        <source
+                          srcset="
+                            images/series-2.avif    1x,
+                            images/series-2_2x.avif 2x,
+                            images/series-2_3x.avif 3x
+                          "
+                          type="image/avif"
+                        />
+                        <source
+                          srcset="
+                            images/series-2.webp    1x,
+                            images/series-2_2x.webp 2x,
+                            images/series-2_3x.webp 3x
+                          "
+                          type="image/webp"
+                        />
+                        <img
+                          src="images/series-2.jpg"
+                          srcset="images/series-2_2x.jpg 2x, images/series-2_3x.jpg 3x"
+                          alt="Парень, готовящийся к выступлению"
+                          width="800"
+                          height="533"
+                        />
+                      </picture>
+                      <h3 class="title slider__title">Серия 2</h3>
+                    </a>
+                  </li>
+                  <li class="slider__item">
+                    <a class="slider__link">
+                      <picture class="slider__img">
+                        <source
+                          srcset="
+                            images/series-3.avif    1x,
+                            images/series-3_2x.avif 2x,
+                            images/series-3_3x.avif 3x
+                          "
+                          type="image/avif"
+                        />
+                        <source
+                          srcset="
+                            images/series-3.webp    1x,
+                            images/series-3_2x.webp 2x,
+                            images/series-3_3x.webp 3x
+                          "
+                          type="image/webp"
+                        />
+                        <img
+                          src="images/series-3.jpg"
+                          srcset="images/series-3_2x.jpg 2x, images/series-3_3x.jpg 3x"
+                          alt="Парень, готовящийся к выступлению"
+                          width="800"
+                          height="533"
+                        />
+                      </picture>
+                      <h3 class="title slider__title">Серия 3</h3>
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <button class="slider__button slider__button--prev">
                 <span class="visually-hidden">Предыдущий слайд</span>
                 <svg

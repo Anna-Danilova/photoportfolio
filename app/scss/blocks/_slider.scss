@@ -2,12 +2,21 @@
   position: relative;
   overflow: hidden;
 
+  &__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
   &__list {
     display: flex;
-    max-width: 800px;
-    height: auto;
     margin: 0 auto;
     transition: transform 0.5s ease;
+  }
+
+  &__img {
+    width: 800px;
+    height: auto;
   }
 
   &__title {
